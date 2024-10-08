@@ -27,6 +27,54 @@ public class CargaFamiliar{
         this.parentesco = parentesco;
         this.edadCarga = edadCarga;
     }
+
+    public String getRunCarga() {
+        return runCarga;
+    }
+
+    public void setRunCarga(String runCarga) {
+        this.runCarga = runCarga;
+    }
+
+    public String getNombreCarga() {
+        return nombreCarga;
+    }
+
+    public void setNombreCarga(String nombreCarga) {
+        this.nombreCarga = nombreCarga;
+    }
+
+    public String getApellidoMaternoCf() {
+        return apellidoMaternoCf;
+    }
+
+    public void setApellidoMaternoCf(String apellidoMaternoCf) {
+        this.apellidoMaternoCf = apellidoMaternoCf;
+    }
+
+    public String getApellidoPaternoCf() {
+        return apellidoPaternoCf;
+    }
+
+    public void setApellidoPaternoCf(String apellidoPaternoCf) {
+        this.apellidoPaternoCf = apellidoPaternoCf;
+    }
+
+    public String getParentesco() {
+        return parentesco;
+    }
+
+    public void setParentesco(String parentesco) {
+        this.parentesco = parentesco;
+    }
+
+    public int getEdadCarga() {
+        return edadCarga;
+    }
+
+    public void setEdadCarga(int edadCarga) {
+        this.edadCarga = edadCarga;
+    }
     
     // ---------------------------------
     //metodos constructores
