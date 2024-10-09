@@ -10,7 +10,7 @@ public class CargaFamiliar{
         private String parentesco;
         private int edadCarga;
          
-       public CargaFamiliar (){};
+    public CargaFamiliar (){};
 
     public CargaFamiliar(
             String runCarga,
