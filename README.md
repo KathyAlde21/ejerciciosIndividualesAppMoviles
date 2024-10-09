@@ -7,6 +7,7 @@
 - [Ejercicio 21](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/ejercicioIndividual21)
 - [Ejercicio 23](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/ejercicioIndividual23)
 - [Ejercicio 25](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/ejercicioIndividual25)
+- [Ejercicio 26](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/ejercicioIndividual26)
 - [Ejercicio 27](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/ejercicioIndividual27)
 - [Ejercicio 29](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/ejercicioIndividual29)
 - [Ejercicio 31](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/ejercicioIndividual31)
