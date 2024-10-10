@@ -21,6 +21,7 @@ public class Envio extends Comprador {
         this.direccionEnvio = direccionEnvio;
     }
 
+    //FECHA ENVIO
     public String getFechaEnvio() {
         return fechaEnvio;
     }
@@ -29,6 +30,7 @@ public class Envio extends Comprador {
         this.fechaEnvio = fechaEnvio;
     }
 
+    //DIRECCION ENVIO
     public String getDireccionEnvio() {
         return direccionEnvio;
     }

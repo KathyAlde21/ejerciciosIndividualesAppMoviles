@@ -24,6 +24,7 @@ public class Vendedor extends Articulo{
         this.apellidoVendedor = apellidoVendedor;
     }
 
+    //NOMBRE VENDEDOR
     public String getNombreVendedor() {
         return nombreVendedor;
     }
@@ -32,6 +33,7 @@ public class Vendedor extends Articulo{
         this.nombreVendedor = nombreVendedor;
     }
 
+    //APELLIDO VENDEDOR
     public String getApellidoVendedor() {
         return apellidoVendedor;
     }

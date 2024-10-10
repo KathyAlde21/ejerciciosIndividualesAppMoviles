@@ -23,6 +23,7 @@ public class Articulo extends Envio {
         this.precio = precio;
     }
 
+    //NOMBRE ARTICULO
     public String getNombreArticulo() {
         return nombreArticulo;
     }
@@ -31,6 +32,7 @@ public class Articulo extends Envio {
         this.nombreArticulo = nombreArticulo;
     }
 
+    //PRECIO
     public String getPrecio() {
         return precio;
     }

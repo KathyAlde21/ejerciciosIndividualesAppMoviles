@@ -25,6 +25,8 @@ public class Pago extends Envio {
         this.direccionFacturacion = direccionFacturacion;
     }
 
+    //------------------------------------
+    //FECHA PAGO
     public String getFechaPago() {
         return fechaPago;
     }
@@ -33,6 +35,7 @@ public class Pago extends Envio {
         this.fechaPago = fechaPago;
     }
 
+    //IMPORTE
     public String getImporte() {
         return importe;
     }
@@ -41,6 +44,7 @@ public class Pago extends Envio {
         this.importe = importe;
     }
 
+    //DIRECCION FACTURACION
     public String getDireccionFacturacion() {
         return direccionFacturacion;
     }
@@ -48,6 +52,8 @@ public class Pago extends Envio {
     public void setDireccionFacturacion(String direccionFacturacion) {
         this.direccionFacturacion = direccionFacturacion;
     }
+    
+    //*****************************************
 
     @Override
     public String toString() {

@@ -19,6 +19,8 @@ public class Comprador {
         this.direccion = direccion;
     }
 
+    //--------------------------------
+    //NOMBRE COMPRADOR
     public String getNombreComprador() {
         return nombreComprador;
     }
@@ -27,6 +29,7 @@ public class Comprador {
         this.nombreComprador = nombreComprador;
     }
 
+    //APELLIDO COMPRADOR
     public String getApellidoComprador() {
         return apellidoComprador;
     }
@@ -35,6 +38,7 @@ public class Comprador {
         this.apellidoComprador = apellidoComprador;
     }
 
+    //DIRECCION
     public String getDireccion() {
         return direccion;
     }
@@ -42,6 +46,8 @@ public class Comprador {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    
+    //**************************************
 
     @Override
     public String toString() {
