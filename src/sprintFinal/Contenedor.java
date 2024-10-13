@@ -8,16 +8,48 @@ import java.util.List;
         
 public class Contenedor {
 
+    private List<Asesoria> clientes;
+    private List<Asesoria> profesionales;
+    private List<Administrativo> administrativos;
     private List<Asesoria> usuarios;
     private List<Capacitacion> capacitaciones;
 
+
     public Contenedor() {
+        this.clientes = new ArrayList<>();
+        this.profesionales = new ArrayList<>();
+        this.administrativos = new ArrayList<>();
         this.usuarios = new ArrayList<>();
         this.capacitaciones = new ArrayList<>();
+        
     }
     
     //-------------------------
 
+    public List<Asesoria> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Asesoria> clientes) {
+        this.clientes = clientes;
+    }
+
+    public List<Asesoria> getProfesionales() {
+        return profesionales;
+    }
+
+    public void setProfesionales(List<Asesoria> profesionales) {
+        this.profesionales = profesionales;
+    }
+
+    public List<Administrativo> getAdministrativos() {
+        return administrativos;
+    }
+
+    public void setAdministrativos(List<Administrativo> administrativos) {
+        this.administrativos = administrativos;
+    }
+    
     public List<Asesoria> getUsuarios() {
         return usuarios;
     }
@@ -39,26 +71,31 @@ public class Contenedor {
     //1) Almacenar cliente
     public void almacenarCliente(Cliente cliente) {
         usuarios.add(cliente);
+        System.out.println("Cliente ingresado: " + cliente);
     }
 
     //2) Almacenar profesional
     public void almacenarProfesional(Profesional profesional) {
         usuarios.add(profesional);
+        System.out.println("Profesional ingresado: " + profesional);
     }
 
     //3) Almacenar administrativo
     public void almacenarAdministrativo(Administrativo administrativo) {
         usuarios.add(administrativo);
+        System.out.println("Administrativo ingresado: " + administrativo);
     }
 
     //4) Almacenar capacitación
     public void almacenarCapacitacion(Capacitacion capacitacion) {
         capacitaciones.add(capacitacion);
+        System.out.println("Capacitacion ingresada: " + capacitacion);
     }
 
     //5) Eliminar usuario por RUN
     public void eliminarUsuario(int rut) {
         usuarios.removeIf(usuario -> ((Usuario) usuario).getRut()==(rut));
+        System.out.println("Usuario eliminado correctamente");
     }
 
     //6) Listar todos los usuarios
@@ -107,7 +144,7 @@ public class Contenedor {
     // Métodos para guardar usuarios y capacitaciones en un archivo
     
     //CLIENTE
- /*   public void guardarClientes() {
+    public void guardarClientes() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("clientes.dat"))) {
             oos.writeObject(clientes); // Escribir la lista de clientes completa
         } catch (IOException e) {
@@ -131,7 +168,7 @@ public class Contenedor {
         } catch (IOException e) {
             System.out.println("Error al guardar administrativos: " + e.getMessage());
         }
-    }*/
+    }
     
     //USUARIOS
     public void guardarUsuarios() {
@@ -155,11 +192,11 @@ public class Contenedor {
 
     // Métodos para cargar usuarios y capacitaciones desde un archivo
     //CLIENTE
-  /*  public void cargarClientes() {
+    public void cargarClientes() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("clientes.dat"))) {
-            clientes = (List<Cliente>) ois.readObject(); // Leer la lista de clientes
+            clientes = (List<Asesoria>) ois.readObject(); // Leer la lista de clientes
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo de clientes no encontrado. Se creará uno nuevo.");
+           // System.out.println("Archivo de clientes no encontrado. Se creará uno nuevo.");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error al cargar clientes: " + e.getMessage());
         }
@@ -168,9 +205,9 @@ public class Contenedor {
     //PROFESIONAL
      public void cargarProfesionales() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("profesionales.dat"))) {
-            profesionales = (List<Profesional>) ois.readObject(); // Leer la lista de profesionales
+            profesionales = (List<Asesoria>) ois.readObject(); // Leer la lista de profesionales
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo de profesionales no encontrado. Se creará uno nuevo.");
+         //   System.out.println("Archivo de profesionales no encontrado. Se creará uno nuevo.");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error al cargar profesionales: " + e.getMessage());
         }
@@ -181,18 +218,18 @@ public class Contenedor {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("administrativos.dat"))) {
             administrativos = (List<Administrativo>) ois.readObject(); // Leer la lista de administrativos
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo de administrativos no encontrado. Se creará uno nuevo.");
+         //   System.out.println("Archivo de administrativos no encontrado. Se creará uno nuevo.");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error al cargar administrativos: " + e.getMessage());
         }
-    }*/
+    }
         
     //USUARIOS
     public void cargarUsuarios() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("usuarios.dat"))) {
             usuarios = (List<Asesoria>) ois.readObject();
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo de usuarios no encontrado. Se creará uno nuevo.");
+          //  System.out.println("Archivo de usuarios no encontrado. Se creará uno nuevo.");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error al cargar usuarios: " + e.getMessage());
         }
@@ -203,11 +240,42 @@ public class Contenedor {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("capacitaciones.dat"))) {
             capacitaciones = (List<Capacitacion>) ois.readObject();
         } catch (FileNotFoundException e) {
-            System.out.println("Archivo de capacitaciones no encontrado. Se creará uno nuevo.");
+          //  System.out.println("Archivo de capacitaciones no encontrado. Se creará uno nuevo.");
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error al cargar capacitaciones: " + e.getMessage());
         }
-    }      
+    }    
+    
+    public void cargarEliminarUsuarios(){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("usuarios.dat"))) {
+            usuarios = (List<Asesoria>) ois.readObject();
+        } catch (FileNotFoundException e) {
+         //   System.out.println("Archivo de usuarios no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar usuarios: " + e.getMessage());
+        }
+    }
+    
+    public void cargarListarUsuariosPorTipo(){
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("usuarios.dat"))) {
+            usuarios = (List<Asesoria>) ois.readObject();
+        } catch (FileNotFoundException e) {
+         //  System.out.println("Archivo de usuarios no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar usuarios: " + e.getMessage());
+        }    
+    }
+    
+    public void cargarListarCapacitaciones(){
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("capacitaciones.dat"))) {
+            capacitaciones = (List<Capacitacion>) ois.readObject();
+        } catch (FileNotFoundException e) {
+          //  System.out.println("Archivo de capacitaciones no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar capacitaciones: " + e.getMessage());
+        }
+    }
+    
 }
 
 

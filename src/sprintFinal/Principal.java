@@ -1,4 +1,3 @@
-
 package sprintFinal;
 
 import java.time.LocalDate;
@@ -8,22 +7,11 @@ public class Principal{
     
     public static void main(String[] args) {
        // System.out.println("Hola Mundo");
-        
-        Contenedor contenedor = new Contenedor();
         Scanner scanner = new Scanner(System.in);
+        Contenedor contenedor = new Contenedor();
         int opcion;
         
-        //almacenamiento de datos ingresado en ciclo do while
-    
-    //    contenedor.cargarClientes();
-    //    contenedor.cargarProfesionales();
-    //    contenedor.cargarAministrativos();
-        contenedor.cargarUsuarios();
-        contenedor.cargarCapacitaciones();
-    //    contenedor.cargarEliminarUsuarios();
-    //    contenedor.cargarListarUsuariosPorTipo();
-    //    contenedor.cargarListarCapacitaciones();
-
+        
         do {
             //Menu ingreso datos
             //con 3 comillas pudo hacer bloque de texto multiplineas
@@ -49,135 +37,121 @@ public class Principal{
                 case 1 -> { //Almacenar Cliente
                     System.out.print("Ingrese RUT: ");
                     int rutCliente = scanner.nextInt();
-                    scanner.nextLine();
-                    
+                    scanner.nextLine();                    
                     System.out.print("Ingrese nombre: ");
-                    String nombres = scanner.nextLine();
-                    
+                    String nombres = scanner.nextLine();                    
                     System.out.println("Ingrese apellido: ");
-                    String apellidos = scanner.nextLine();
-                    
-                  //  System.out.print("Ingrese fecha de nacimiento (dd/mm/yyyy): ");
-                  //  String fechaNacimiento = scanner.nextLine();
-                    System.out.print("Ingrese edad: ");
+                    String apellidos = scanner.nextLine();                    
+                    System.out.print("Ingrese fecha de nacimiento (dd/mm/yyyy): ");
+                    String fechaNacimiento = scanner.nextLine();                    
+                    System.out.print("Ingrese edad: ");                    
                     int edad = scanner.nextInt();
-                    scanner.nextLine();
-                    
+                    scanner.nextLine();                    
                     System.out.print("Ingrese teléfono: ");
-                    String telefono = scanner.nextLine();
-                    
-                    System.out.print("Ingrese AFP: ");
-                    String afp = scanner.nextLine();
-                    
+                    String telefono = scanner.nextLine();                    
+                    System.out.print("Ingrese AFP: "); 
+                    String afp = scanner.nextLine();                    
                     System.out.print("Ingrese sistema de salud (1: Fonasa,"
                             + " 2: Isapre): ");
                     int sistemaSalud = scanner.nextInt();
-                    scanner.nextLine();
-                    
+                    scanner.nextLine();                    
                     System.out.print("Ingrese dirección: ");
-                    String direccion = scanner.nextLine();
-                    
+                    String direccion = scanner.nextLine();                    
                     System.out.print("Ingrese comuna: ");
                     String comuna = scanner.nextLine();
-                    
-
-               //     System.out.println("Los datos del cliente son: ");
-                    Cliente cliente = new Cliente (rutCliente, nombres, apellidos,
-                            telefono, afp, sistemaSalud, direccion, comuna, edad,
-                            nombres, LocalDate.MIN, edad);
+                    //----------
+                    Cliente cliente = new Cliente (rutCliente, nombres, apellidos, telefono, afp, sistemaSalud, direccion, comuna, edad, nombres, LocalDate.MIN, edad);
                     contenedor.almacenarCliente(cliente);
-                    
-                     // Almacenar los datos en el archivo después de agregar el cliente
-                  //  contenedor.guardarClientes();
-                    
-                   /* System.out.println("Los datos ingresados son: RUT: " 
-                        + rutCliente + "Nombre: " + nombres + " " + apellidos 
+                    //----------                    
+                    System.out.println("Los datos ingresados son: RUT: " 
+                        + rutCliente + "Nombre: " + nombres + " " + apellidos
+                        + ", Fecha de Nacimiento: " + fechaNacimiento
                         + ", Edad: " + edad + ",  Telefono: " + telefono
                         + ", AFP: " + afp + ", Sistema de Salud: " + sistemaSalud   
-                        + ", Dirección: " + direccion+ " " + comuna);*/
-                                                            
+                        + ", Dirección: " + direccion+ " " + comuna);
+                    contenedor.guardarClientes();
                 }
             //------------------------------------------------------------------        
                 case 2 -> { //Almacenar Profesional
                     System.out.print("Ingrese nombre: ");
-                    String nombres = scanner.nextLine();
-                    
-                  //  System.out.print("Ingrese fecha de nacimiento (dd/mm/yyyy): ");
-                 //   fechaNacimiento = scanner.nextLine();
+                    String nombres = scanner.nextLine();                    
+                    System.out.print("Ingrese fecha de nacimiento (dd/mm/yyyy): ");
+                    String fechaNacimiento = scanner.nextLine();
                     System.out.print("Ingrese RUT: ");
                     int rut = scanner.nextInt();
-                    scanner.nextLine();
-                    
+                    scanner.nextLine();                    
                     System.out.print("Ingrese título: ");
-                    String titulo = scanner.nextLine();
-                    
+                    String titulo = scanner.nextLine();                    
                     System.out.print("Ingrese fecha de ingreso (dd/mm/yyyy): ");
                     String fechaIngreso = scanner.nextLine();
-                    
+                    //----------
                     Profesional profesional = new Profesional(titulo, LocalDate.MIN, nombres, LocalDate.MIN, edad);
                     contenedor.almacenarProfesional(profesional);
-                    
-                    // Almacenar los datos en el archivo después de agregar el profesional
-                //    contenedor.guardarProfesionales();
-                 //   profesional.analizarUsuario();
-                    
+                    //-----------
+                    System.out.println("Los datos ingresados son: Nombre: "
+                            + nombres + "RUT: " + rut 
+                            + ", Fecha de Nacimiento: " + fechaNacimiento
+                            + ", Titulo: " + titulo
+                            + ", Fecha de Ingreso: " + fechaIngreso);
+                    contenedor.guardarProfesionales();  
+                    //-----------
                 }   
                     
                 case 3-> { //Almacenar Administrativo
                     System.out.print("Ingrese nombre: ");
-                    String nombres = scanner.nextLine();
-                    
-                //    System.out.print("Ingrese fecha de nacimiento (dd/mm/yyyy): ");
-                  //  fechaNacimiento = scanner.nextLine();
-                  
-                   // System.out.print("Ingrese RUT: ");
-                  //  int rut = scanner.nextInt();
-                 //   scanner.nextLine();
-                 
+                    String nombres = scanner.nextLine();                    
+                    System.out.print("Ingrese fecha de nacimiento (dd/mm/yyyy): ");
+                    String fechaNacimiento = scanner.nextLine();                  
+                    System.out.print("Ingrese RUT: ");
+                    int rut = scanner.nextInt();
+                    scanner.nextLine();
                     System.out.print("Ingrese área: ");
                     String area = scanner.nextLine();
                     
                     System.out.print("Ingrese experiencia previa: ");
                     String experienciaPrevia = scanner.nextLine();
-
-                    Administrativo administrativo = new Administrativo(area, experienciaPrevia, nombres, LocalDate.MIN, edad);
+                    //-----------
+                    Administrativo administrativo = new Administrativo(rut, area, experienciaPrevia, nombres, LocalDate.MIN, edad);
                     contenedor.almacenarAdministrativo(administrativo);
-                    
-                    // Almacenar los datos en el archivo después de agregar el administrativo
-                //    contenedor.guardarAdministrativos();
-                    
+                    //-----------
+                    System.out.println("Los datos ingresados son: Nombre: " 
+                            + nombres + ", RUT: " + rut 
+                            + ", Fecha de Nacimiento: " + fechaNacimiento
+                            + ", Area " + area
+                            + ", Experiencia previa: " + experienciaPrevia);
+                    contenedor.guardarAdministrativos();
+                    //-----------
                 }
                     
                 case 4-> { //Almacenar Capacitación
                     System.out.print("Ingrese identificador de la capacitación: ");
                     int identificador = scanner.nextInt();
-                    scanner.nextLine();
-                    
+                    scanner.nextLine();                    
                     System.out.print("Ingrese RUT del cliente: ");
                     int rutCliente = scanner.nextInt();
-                    scanner.nextLine();
-                    
+                    scanner.nextLine();                    
                     System.out.print("Ingrese día: ");
-                    String dia = scanner.nextLine();
-                    
+                    String dia = scanner.nextLine();                    
                     System.out.print("Ingrese hora (HH:MM): ");
-                    String hora = scanner.nextLine();
-                    
+                    String hora = scanner.nextLine();                    
                     System.out.print("Ingrese lugar: ");
-                    String lugar = scanner.nextLine();
-                    
+                    String lugar = scanner.nextLine();                    
                     System.out.print("Ingrese duración: ");
-                    String duracion = scanner.nextLine();
-                    
+                    String duracion = scanner.nextLine();                    
                     System.out.print("Ingrese cantidad de asistentes: ");
                     int cantidadAsistentes = scanner.nextInt();
                     scanner.nextLine();
-
+                    //-----------
                     Capacitacion capacitacion = new Capacitacion(identificador, rutCliente, dia, hora, lugar, duracion, cantidadAsistentes);
                     contenedor.almacenarCapacitacion(capacitacion);
-                    
-                    // Almacenar los datos en el archivo después de agregar la capacitación
+                    //-----------
+                    System.out.println("Los datos ingresados son: Identificador"
+                            + " de la capacitacion: " + identificador + ", RUT: "
+                            + rutCliente + ", Día y hora: " + dia + " " + hora
+                            + ", Lugar: " + lugar + ", Duracion: " + duracion
+                            + ", Cantidad de asistentes: " + cantidadAsistentes);
                     contenedor.guardarCapacitaciones();
+                    //-----------
                 }
                     
                 case 5-> { //Eliminar Usuario
@@ -187,9 +161,9 @@ public class Principal{
                     contenedor.eliminarUsuario(rut);
                     
                     //guardar los cambios después de eliminar
-                //    contenedor.guardarClientes();
-                //    contenedor.guardarProfesionales();
-                //    contenedor.guardarAdministrativos();
+                    contenedor.guardarClientes();
+                    contenedor.guardarProfesionales();
+                    contenedor.guardarAdministrativos();
                 }
                     
                 case 6-> { //Listar Usuarios
@@ -217,10 +191,21 @@ public class Principal{
             }
         //fin switch case
             
-        } while (opcion != 9);
-
+        } while (opcion != 9);    
+        
         scanner.close();
         
+        //almacenamiento de datos ingresado en ciclo do while
+        contenedor.cargarClientes();
+        contenedor.cargarProfesionales();
+        contenedor.cargarAdministrativos();
+        contenedor.cargarUsuarios();
+        contenedor.cargarCapacitaciones();
+        contenedor.cargarEliminarUsuarios();
+        contenedor.cargarListarUsuariosPorTipo();
+        contenedor.cargarListarCapacitaciones();
+
         
     }
+    
 }
