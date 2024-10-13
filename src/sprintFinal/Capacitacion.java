@@ -1,7 +1,7 @@
 
 package sprintFinal;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 public class Capacitacion{
     

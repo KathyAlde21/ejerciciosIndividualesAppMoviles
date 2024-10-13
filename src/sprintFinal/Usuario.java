@@ -9,7 +9,7 @@ public class Usuario implements Asesoria {
     
     String nombre;
     private LocalDate fechaNacimiento;
-    int run;
+    int rut;
     
     //--------------------
     public Usuario (){};
@@ -17,10 +17,10 @@ public class Usuario implements Asesoria {
     public Usuario(
             String nombre,
             LocalDate fechaNacimiento,
-            int run) {
+            int rut) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
-        this.run = run;
+        this.rut = rut;
     }
     //------------------
 
@@ -48,16 +48,16 @@ public class Usuario implements Asesoria {
     }
 
     //RUN
-    public int getRun() {
-        return run;
+    public int getRut() {
+        return rut;
     }
 
-    public void setRun(int run) {
-        if (run >= 99999999) {
-            throw new IllegalArgumentException("El RUN debe ser menor a"
+    public void setRut(int rut) {
+        if (rut >= 99999999) {
+            throw new IllegalArgumentException("El RUT debe ser menor a"
                     + " 99.999.999.");
         }
-        this.run = run;
+        this.rut = rut;
     }
 
     //******************************************
@@ -86,26 +86,26 @@ public class Usuario implements Asesoria {
     //----------
     
     public void mostrarRut(){
-        System.out.println(run); 
+        System.out.println(rut); 
     }
     
     public void mostrarDatosUsuario(){
         System.out.println("Usuario: " + nombre
                 + ", fecha de nacimiento: " + fechaNacimiento
-                + ", RUN: " + run); 
+                + ", RUT: " + rut); 
     }
     
     @Override //implementada en interface Asesoria
     public void analizarUsuario(){
         System.out.println("El nombre del usuario es: " + nombre 
-                + ", RUN " + run);
+                + ", RUT " + rut);
     }
     
     @Override
     public String toString() {
         return "Usuario{" + "nombre=" + nombre
                 + ", fechaNacimiento=" + fechaNacimiento
-                + ", run=" + run + '}';
+                + ", rut=" + rut + '}';
     }
 
 }

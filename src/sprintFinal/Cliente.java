@@ -3,9 +3,9 @@ package sprintFinal;
 
 import java.time.LocalDate;
 
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements Asesoria {
     
-    private int rut;
+    private int rutCliente;
     private String nombres;
     private String apellidos;
     private String telefono;
@@ -18,7 +18,7 @@ public class Cliente extends Usuario {
     public Cliente (){};
 
     public Cliente(
-            int rut,
+            int rutCliente,
             String nombres,
             String apellidos,
             String telefono,
@@ -29,10 +29,10 @@ public class Cliente extends Usuario {
             int edad,
             String nombre,
             LocalDate fechaNacimiento,
-            int run
+            int rut
     ) {
-        super(nombre, fechaNacimiento, run);
-        this.rut = rut;
+        super(nombre, fechaNacimiento, rut);
+        this.rutCliente = rutCliente;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.telefono = telefono;
@@ -45,16 +45,16 @@ public class Cliente extends Usuario {
     
     //---------------------------
     //RUT
-    public int getRut() {
-        return rut;
+    public int getRutCliente() {
+        return rutCliente;
     }
 
-    public void setRut(int rut) {
-        if (rut >= 99999999) {
+    public void setRutCliente(int rutCliente) {
+        if (rutCliente >= 99999999) {
             throw new IllegalArgumentException("El RUT debe ser menor a"
                     + " 99.999.999.");
         }
-        this.rut = rut;
+        this.rutCliente = rutCliente;
     }
 
     //NOMBRE
@@ -177,12 +177,12 @@ public class Cliente extends Usuario {
     @Override
     public void analizarUsuario(){
         System.out.println("El nombre del usuario es: " + nombres + " " 
-                + apellidos + ", RUT: " + rut);
+                + apellidos + ", RUT: " + rutCliente);
     }
     
     public void mostrarDatosCliente(){
         System.out.println("Nombre: " + nombres + " " + apellidos + ", RUT: "
-                + rut + ", AFP: " + afp + ", Prevision: " 
+                + rutCliente + ", AFP: " + afp + ", Prevision: " 
                 + (sistemaSalud == 1 ? "Fonasa" : "Isapre")
                 + ", Direccion: " + direccion + ", Comuna " + comuna
                 + ", Edad " + edad);
@@ -194,7 +194,7 @@ public class Cliente extends Usuario {
                 + ", Teléfono: " + telefono + ", AFP: " + afp + ", Sistema"
                 + " de salud: " + (sistemaSalud == 1 ? "Fonasa" : "Isapre") 
                 + ", Dirección: " + direccion + ", Comuna: " + comuna 
-                + ", Edad: " + edad;
+                + ", Edad: " + edad + ", RUT: " + rutCliente;
     }
     
 }

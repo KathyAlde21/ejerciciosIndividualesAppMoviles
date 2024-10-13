@@ -1,10 +1,9 @@
-
 package sprintFinal;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Profesional extends Usuario {
+public class Profesional extends Usuario implements Asesoria{
     
     private String titulo;
     private LocalDate fechaIngreso;
@@ -16,9 +15,9 @@ public class Profesional extends Usuario {
             LocalDate fechaIngreso, 
             String nombre,
             LocalDate fechaNacimiento,
-            int run
+            int rut
     ) {
-        super(nombre, fechaNacimiento, run);
+        super(nombre, fechaNacimiento, rut);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
     }

@@ -1,6 +1,7 @@
-
 package sprintFinal;
 
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,47 +57,165 @@ public class Contenedor {
     }
 
     //5) Eliminar usuario por RUN
-    public void eliminarUsuario(int run) {
-        usuarios.removeIf(usuario ->
-                ((Usuario) usuario).getRun().equals(run));
+    public void eliminarUsuario(int rut) {
+        usuarios.removeIf(usuario -> ((Usuario) usuario).getRut()==(rut));
     }
 
     //6) Listar todos los usuarios
     public void listarUsuarios() {
         for (Asesoria usuario : usuarios) {
-            System.out.println(((Usuario) usuario).toString());
+            System.out.println(usuario);
         }
     }
 
     //7) Listar usuarios por tipo
+  /*  public void listarUsuariosPorTipo(String tipoUsuario) {
+        for (Asesoria usuario : usuarios) {
+            if ((tipoUsuario.equals("cliente") && usuario instanceof Cliente) ||
+                (tipoUsuario.equals("administrativo") && usuario instanceof Administrativo) ||
+                (tipoUsuario.equals("profesional") && usuario instanceof Profesional)) {
+                System.out.println(usuario);
+            }
+        }
+    }*/
+    
     public void listarUsuariosPorTipo(String tipoUsuario) {
         for (Asesoria usuario : usuarios) {
-            if ((tipoUsuario.equals("cliente")
-                    && usuario instanceof Cliente) ||
-                (tipoUsuario.equals("administrativo")
-                    && usuario instanceof Administrativo) ||
-                (tipoUsuario.equals("profesional")
-                    && usuario instanceof Profesional)) {
-                System.out.println(((Usuario) usuario).toString());
+            if (tipoUsuario.equalsIgnoreCase("cliente")
+                    && usuario instanceof Cliente) {
+                System.out.println(usuario);
+            } else if (tipoUsuario.equalsIgnoreCase("profesional")
+                    && usuario instanceof Profesional) {
+                System.out.println(usuario);
+            } else if (tipoUsuario.equalsIgnoreCase("administrativo") 
+                    && usuario instanceof Administrativo) {
+                System.out.println(usuario);
             }
         }
     }
+
 
     //8) Listar capacitaciones junto con los datos del cliente asociado
     public void listarCapacitaciones() {
         for (Capacitacion capacitacion : capacitaciones) {
-            System.out.println(capacitacion.toString());
-            for (Asesoria usuario : usuarios) {              
-                if (usuario instanceof Cliente) 
-                    && (Cliente) usuario.getRun().equals(capacitacion.getRutCliente())
-                    System.out.println("Datos del Cliente: " + usuario.toString());
-                }
-            }
+            System.out.println(capacitacion);
         }
     }
+    
+    
+    ////*******************************************
+    // Métodos para guardar usuarios y capacitaciones en un archivo
+    
+    //CLIENTE
+ /*   public void guardarClientes() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("clientes.dat"))) {
+            oos.writeObject(clientes); // Escribir la lista de clientes completa
+        } catch (IOException e) {
+            System.out.println("Error al guardar clientes: " + e.getMessage());
+        }
+    }
+    
+    //PROFESIONAL
+    public void guardarProfesionales() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("profesionales.dat"))) {
+            oos.writeObject(profesionales); // Escribir la lista de profesionales completa
+        } catch (IOException e) {
+            System.out.println("Error al guardar profesionales: " + e.getMessage());
+        }
+    }
+    
+    //ADMINISTRATIVO
+     public void guardarAdministrativos() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("administrativos.dat"))) {
+            oos.writeObject(administrativos); // Escribir la lista de administrativos completa
+        } catch (IOException e) {
+            System.out.println("Error al guardar administrativos: " + e.getMessage());
+        }
+    }*/
+    
+    //USUARIOS
+    public void guardarUsuarios() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("usuarios.dat"))) {
+            oos.writeObject(usuarios);
+        } catch (IOException e) {
+            System.out.println("Error al guardar usuarios: " + e.getMessage());
+        }
+    }
+
+    //CAPACITACIONES
+    public void guardarCapacitaciones() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("capacitaciones.dat"))) {
+            oos.writeObject(capacitaciones);
+        } catch (IOException e) {
+            System.out.println("Error al guardar capacitaciones: " + e.getMessage());
+        }
+    }
+    
+    //--------------------------------------------------------------------------
+
+    // Métodos para cargar usuarios y capacitaciones desde un archivo
+    //CLIENTE
+  /*  public void cargarClientes() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("clientes.dat"))) {
+            clientes = (List<Cliente>) ois.readObject(); // Leer la lista de clientes
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo de clientes no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar clientes: " + e.getMessage());
+        }
+    }
+    
+    //PROFESIONAL
+     public void cargarProfesionales() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("profesionales.dat"))) {
+            profesionales = (List<Profesional>) ois.readObject(); // Leer la lista de profesionales
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo de profesionales no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar profesionales: " + e.getMessage());
+        }
+    }
+     
+    //ADMINISTRATIVO
+    public void cargarAdministrativos() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("administrativos.dat"))) {
+            administrativos = (List<Administrativo>) ois.readObject(); // Leer la lista de administrativos
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo de administrativos no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar administrativos: " + e.getMessage());
+        }
+    }*/
+        
+    //USUARIOS
+    public void cargarUsuarios() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("usuarios.dat"))) {
+            usuarios = (List<Asesoria>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo de usuarios no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar usuarios: " + e.getMessage());
+        }
+    }
+
+    //CAPACITACIONES
+    public void cargarCapacitaciones() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("capacitaciones.dat"))) {
+            capacitaciones = (List<Capacitacion>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo de capacitaciones no encontrado. Se creará uno nuevo.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error al cargar capacitaciones: " + e.getMessage());
+        }
+    }      
 }
 
-    
-    
+
+    /*for (Asesoria usuario : usuarios) {              
+                if (usuario instanceof Cliente) 
+                    && (Cliente) usuario.getRut().equals(capacitacion.getRutCliente())
+                    System.out.println("Datos del Cliente: " + usuario.toString());
+                }
+    */
     
 

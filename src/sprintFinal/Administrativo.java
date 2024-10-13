@@ -1,9 +1,8 @@
-
 package sprintFinal;
 
 import java.time.LocalDate;
 
-public class Administrativo extends Usuario{
+public class Administrativo extends Usuario {
     
     private String area;
     private String experienciaPrevia;
@@ -15,9 +14,9 @@ public class Administrativo extends Usuario{
             String experienciaPrevia,
             String nombre,
             LocalDate fechaNacimiento,
-            int run
+            int rut
     ) {
-        super(nombre, fechaNacimiento, run);
+        super(nombre, fechaNacimiento, rut);
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
@@ -56,7 +55,7 @@ public class Administrativo extends Usuario{
     public void analizarUsuario(){
         System.out.println("El nombre del usuario es: " + super.getNombre() 
                 + ", su fecha de nacimiento es: " 
-                + super.obtenerFechaNacimiento() + ", RUT: " + super.run
+                + super.obtenerFechaNacimiento() + ", RUT: " + super.rut
                 + ", Área a la que pertenece: " + area 
                 + ", Experiencia previa: " + experienciaPrevia);
     }

@@ -16,15 +16,7 @@ public class Accidente {
     
     public Accidente (){};
 
-    public Accidente(
-            int identificador,
-            int rutCliente,
-            LocalDate dia,
-            String hora, 
-            String lugar, 
-            String origen,
-            String consecuencias
-    ) {
+    public Accidente(int identificador, int rutCliente, LocalDate dia, String hora, String lugar, String origen, String consecuencias) {
         this.identificador = identificador;
         this.rutCliente = rutCliente;
         this.dia = dia;
@@ -33,6 +25,8 @@ public class Accidente {
         this.origen = origen;
         this.consecuencias = consecuencias;
     }
+
+   
     
     //---------------------
     //ID
@@ -60,7 +54,7 @@ public class Accidente {
 
     public void setDia(String dia) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                "dd/MM/yyyy");
+                extracted());
         this.dia = LocalDate.parse(dia, formatter);
     }
 
@@ -119,16 +113,19 @@ public class Accidente {
     
     //-----------------------------
     //METODOS:
+    @SuppressWarnings("unused")
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                "dd/MM/yyyy");
+                extracted());
         return "Accidente{" + "identificador=" + identificador 
                 + ", rutCliente=" + rutCliente + ", dia=" + dia 
                 + ", hora=" + hora + ", lugar=" + lugar + ", origen=" 
                 + origen + ", consecuencias=" + consecuencias + '}';
     }
-    
-    
-    
+
+    private String extracted() {
+        return "dd/MM/yyyy";
+    }
+  
 }
