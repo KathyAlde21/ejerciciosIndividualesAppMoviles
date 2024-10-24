@@ -34,7 +34,7 @@
 - [Ejercicio 31 - Sistema que registra trabajadores incorporando métodos](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_2/ejercicioIndividual31)
 - [Ejercicio 33 - Sistema que registra trabajadores incorporando clases y métodos](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_2/ejercicioIndividual33)
 
-- [Sprint Final](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/sprintFinal)
+- [Sprint Final Modulo Dos](https://github.com/KathyAlde21/sprint_final_modulo_dos)
 
 
 
