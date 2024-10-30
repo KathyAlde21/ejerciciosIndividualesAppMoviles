@@ -18,7 +18,7 @@
 
 - [Ejercicio 1 - Proyecto Yo quiero otro Mundo - incluye creacion de base de datos y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual1)
 - [Ejercicio 2 - Proyecto Yo quiero otro Mundo - incluye creacion de base de datos y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual2)
-- [Ejercicio 3]-(https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual3)
+- [Ejercicio 3 - Proyecto Yo quiero otro Mundo - incluye cambio en columnas, creacion de tabla y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual3)
 - [Ejercicio 4]-(https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual4)
 - [Ejercicio 5]-(https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual5)
 
