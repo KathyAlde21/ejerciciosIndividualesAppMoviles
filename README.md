@@ -19,7 +19,7 @@
 - [Ejercicio 1 - Proyecto Yo quiero otro Mundo - incluye creacion de base de datos y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual1)
 - [Ejercicio 2 - Proyecto Yo quiero otro Mundo - incluye creacion de base de datos y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual2)
 - [Ejercicio 3 - Proyecto Yo quiero otro Mundo - incluye cambio en columnas, creacion de tabla y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual3)
-- [Ejercicio 4]-(https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual4)
+- [Ejercicio 4 - Proyecto Yo quiero otro Mundo Iteración 4 - creación de tablas y consultas, creación e incoporación de llaves primerias y foraneas, alteración para incorporar más llaves foráneas, deficiniciones asociadas a transaccionalidads](https://github.com/KathyAlde21/quiero_otro_mundo_iteracion4)
 - [Ejercicio 5]-(https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual5)
 
 - [Sprint Final Modulo Tres]-(https://github.com/KathyAlde21/sprint_final_modulo_tres)
@@ -42,8 +42,3 @@
 - [Ejercicio 33 - Sistema que registra trabajadores incorporando clases y métodos](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_2/ejercicioIndividual33)
 
 - [Sprint Final Modulo Dos](https://github.com/KathyAlde21/sprint_final_modulo_dos)
-
-
-
-
-
