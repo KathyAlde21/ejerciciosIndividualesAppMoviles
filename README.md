@@ -20,7 +20,7 @@
 - [Ejercicio 2 - Proyecto Yo quiero otro Mundo - incluye creacion de base de datos y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual2)
 - [Ejercicio 3 - Proyecto Yo quiero otro Mundo - incluye cambio en columnas, creacion de tabla y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual3)
 - [Ejercicio 4 - Proyecto Yo quiero otro Mundo Iteración 4 - creación de tablas y consultas, creación e incoporación de llaves primerias y foraneas, alteración para incorporar más llaves foráneas, deficiniciones asociadas a transaccionalidads](https://github.com/KathyAlde21/quiero_otro_mundo_iteracion4)
-- [Ejercicio 5]-(https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual5)
+- [Ejercicio 5 - Proyecto Yo quiero otro Mundo Iteración 5 - creación de tablas y registros, eliminación de una de las tablas creadas, justificacion datos utilizados](https://github.com/KathyAlde21/quiero_otro_mundo_iteracion5)
 
 - [Sprint Final Modulo Tres]-(https://github.com/KathyAlde21/sprint_final_modulo_tres)
 
