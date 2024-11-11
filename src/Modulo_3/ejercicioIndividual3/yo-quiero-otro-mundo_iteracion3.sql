@@ -1,9 +1,9 @@
 USE quiero_otro_mundo;
 
 -- // --- TABLA OPERADORES:
--- 1)	Agregue el campo salario al Operador y registre salarios a los operadores ya registrados.
-SELECT * FROM operadres;
+SELECT * FROM operadores;
 
+-- 1)	Agregue el campo salario al Operador y registre salarios a los operadores ya registrados.
 ALTER TABLE operadores
 ADD salario DOUBLE NOT NULL;
 
@@ -90,80 +90,77 @@ LIMIT 1;
 -- 6)	Seleccione las capacitaciones más costosas que el promedio.
 SELECT nombre_curso, costo_realizacion
 FROM capacitacion
-WHERE costo_realizacion > (SELECT AVG(costo_realizacion) FROM capacitacion); -- superior al promedio
+WHERE costo_realizacion > (
+	SELECT AVG(costo_realizacion) 
+	FROM capacitacion
+); -- superior al promedio
 
 SELECT * FROM capacitacion
-WHERE costo_realizacion > (SELECT AVG(costo_realizacion) FROM capacitacion); -- superior al promedio
+WHERE costo_realizacion > (
+	SELECT AVG(costo_realizacion) 
+	FROM capacitacion
+); -- superior al promedio
 
 -- // ------------------------------------------------------------------------------------------------
 -- // --- NUEVA TABLA CAPACITACIONES ECONOMICOS
--- capacitaciones_economicos (codigo_curso, nombre_curso, horario, costo_realizacion, fecha_realizacion, 
-				-- cantidad_minima_estudiantes, aportes_publicos)
+-- 7)	Cree una tabla con las capacitaciones menos costosas que el promedio
+-- debe tener por nombre Capacitaciones Económicos:
+
 SELECT * FROM capacitacion
-WHERE costo_realizacion < (SELECT AVG(costo_realizacion) FROM capacitacion); -- inferior al promedio
-/* VALUES
-(147852,'Contabilidad Básica','10:30:00',200000,'2010-03-04');
-(147853,'Alfabetización Financiera','10:30:00',280000,'2017-06-04');
-(147854,'Atención al cliente','14:30:00',350000,'2012-03-03');
-(258964,'Gestión Básica del Tiempo y Productividad','20:00:00',200000,'2020-10-01');
-(369852,'Introducción a la Computación','11:30:00',200000,'2024-03-03');
-(456321,'Inglés Básico','18:00:00',300000,'2024-03-03');*/
+WHERE costo_realizacion < (
+	SELECT AVG(costo_realizacion)
+	FROM capacitacion
+); -- inferior al promedio
 
--- 7)	Cree una tabla con las capacitaciones menos costosas que el promedio, debe tener por nombre Capacitaciones Económicos
-CREATE TABLE capacitaciones_economicos(
-	codigo_curso INT PRIMARY KEY NOT NULL,
-	nombre_curso VARCHAR(50) NOT NULL,
-	horario TIME NOT NULL,
-	costo_realizacion INT NOT NULL,
-	fecha_realizacion DATE NOT NULL
+CREATE TABLE capacitaciones_economicos AS  				-- que cree la tabla según la consulta:
+SELECT * FROM capacitacion
+WHERE costo_realizacion < (
+	SELECT AVG(costo_realizacion)
+	FROM capacitacion
 );
-
--- alimentando capacitaciones menos costosas
-INSERT INTO capacitaciones_economicos (codigo_curso, nombre_curso, horario, costo_realizacion, fecha_realizacion)
-VALUES (147852,'Contabilidad Básica','10:30:00',200000,'2010-03-04'),
-(147853,'Alfabetización Financiera','10:30:00',280000,'2017-06-04'),
-(147854,'Atención al cliente','14:30:00',350000,'2012-03-03'),
-(258964,'Gestión Básica del Tiempo y Productividad','20:00:00',200000,'2020-10-01'),
-(369852,'Introducción a la Computación','11:30:00',200000,'2024-03-03'),
-(456321,'Inglés Básico','18:00:00',300000,'2024-03-03');
-
 
 -- 8)	A la tabla Capacitaciones Económicos, agrégale dos campos. ‘Cantidad mínima estudiantes’ y ‘Aportes públicos’.
 ALTER TABLE capacitaciones_economicos
 ADD cantidad_minima_estudiantes INT NOT NULL, -- mínimo de estudiantes necesarios para su realización
 ADD aportes_publicos INT NOT NULL; -- tiene que ser un valor menor al costo total del curso
 
+SELECT * FROM capacitaciones_economicos;
 
 -- ingresando cantidad_minima_estudiantes y aportes_publicos a capacitaciones_economicos
 UPDATE capacitaciones_economicos
 SET cantidad_minima_estudiantes = 30,
+aportes_publicos = 250000
+WHERE codigo_curso = 56487; -- (56487, 'Excel básico', '10:30:00', 200000, '2010-03-04'), -- 1
+
+UPDATE capacitaciones_economicos
+SET cantidad_minima_estudiantes = 30,
 aportes_publicos = 150000
-WHERE codigo_curso = 147852; -- (147852, 'Contabilidad Básica', '10:30:00', 200000, '2010-03-04'), -- 1
+WHERE codigo_curso = 147852; -- (147852, 'Contabilidad Básica', '10:30:00', 200000, '2010-03-04'), -- 2
  
 UPDATE capacitaciones_economicos
 SET cantidad_minima_estudiantes = 30,
 aportes_publicos = 230000
-WHERE codigo_curso = 147853; -- (147853, 'Alfabetización Financiera', '10:30:00', 280000, '2017-06-04'), -- 2
+WHERE codigo_curso = 147853; -- (147853, 'Alfabetización Financiera', '10:30:00', 280000, '2017-06-04'), -- 3
 
 UPDATE capacitaciones_economicos
 SET cantidad_minima_estudiantes = 30,
 aportes_publicos = 300000
-WHERE codigo_curso = 147854; -- (147854, 'Atención al cliente', '14:30:00', 350000, '2012-03-03'), -- 3
+WHERE codigo_curso = 147854; -- (147854, 'Atención al cliente', '14:30:00', 350000, '2012-03-03'), -- 4
 
 UPDATE capacitaciones_economicos
 SET cantidad_minima_estudiantes = 25,
 aportes_publicos = 150000
-WHERE codigo_curso = 258964; -- (258964, 'Gestión Básica del Tiempo y Productividad', '20:00:00', 200000, '2020-10-01'), -- 4
+WHERE codigo_curso = 258964; -- (258964, 'Gestión Básica del Tiempo y Productividad', '20:00:00', 200000, '2020-10-01'), -- 5
 
 UPDATE capacitaciones_economicos
 SET cantidad_minima_estudiantes = 20,
 aportes_publicos = 150000
-WHERE codigo_curso = 369852; -- (369852, 'Introducción a la Computación', '11:30:00', 200000, '2024-03-03'), -- 5
+WHERE codigo_curso = 369852; -- (369852, 'Introducción a la Computación', '11:30:00', 200000, '2024-03-03'), -- 6
 
 UPDATE capacitaciones_economicos
 SET cantidad_minima_estudiantes = 20,
 aportes_publicos = 280000
-WHERE codigo_curso = 456321; -- (456321, 'Inglés Básico', '18:00:00', 300000, '2024-03-03'), -- 6
+WHERE codigo_curso = 456321; -- (456321, 'Inglés Básico', '18:00:00', 300000, '2024-03-03'), -- 7
 
 -- // ------------------------------------------------------------------------------------------------
 -- 9)	Renombre la columna “Costo realización” en la tabla Capacitaciones económicas. 
