@@ -22,7 +22,7 @@
 - [Ejercicio 4 - Proyecto Yo quiero otro Mundo Iteración 4 - creación de tablas y consultas, creación e incoporación de llaves primerias y foraneas, alteración para incorporar más llaves foráneas, deficiniciones asociadas a transaccionalidads](https://github.com/KathyAlde21/quiero_otro_mundo_iteracion4)
 - [Ejercicio 5 - Proyecto Yo quiero otro Mundo Iteración 5 - creación de tablas y registros, eliminación de una de las tablas creadas, justificacion datos utilizados](https://github.com/KathyAlde21/quiero_otro_mundo_iteracion5)
 
-- [Sprint Final Modulo Tres]-(https://github.com/KathyAlde21/sprint_final_modulo_tres)
+- [Sprint Final Modulo Tres - Te Lo Vendo Sprint - creación de base de datos, tablas y registros](https://github.com/KathyAlde21/telovendo_sprint.git)
 
 
 
