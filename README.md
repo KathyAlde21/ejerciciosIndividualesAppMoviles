@@ -1,20 +1,6 @@
-**_<h1 align="center">:vulcan_salute: Ejercicios Individuales Plataforma :computer:</h1>_**
-**_<h2 align="center">Módulo 6 - Desarrollo de Aplicaciones Empresariales Android</h2>_**
+**_<h2 align="center">:vulcan_salute: Ejercicios Individuales Java Plataforma :computer:</h2>_**
 
-- []()
-- []()
-
-**_<h2 align="center">Módulo 5 - Arquitectura y Ciclo de Vida de Componentes Android</h2>_**
-
-- []()
-- []()
-
-**_<h2 align="center">Módulo 4 - Desarrollo de la Interfaz de Usuario Android</h2>_**
-
-- []()
-- []()
-
-**_<h2 align="center">Módulo 3 - Fundamentos de Bases de Datos Relacionales</h2>_**
+**_<h3 align="center">Módulo 3 - Fundamentos de Bases de Datos Relacionales</h3>_**
 
 - [Ejercicio 1 - Proyecto Yo quiero otro Mundo - incluye creacion de base de datos y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual1)
 - [Ejercicio 2 - Proyecto Yo quiero otro Mundo - incluye creacion de base de datos y consultas](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_3/ejercicioIndividual2)
@@ -26,7 +12,7 @@
 
 
 
-**_<h2 align="center">Módulo 2 - Fundamentos de Programación en Java</h2>_**
+**_<h3 align="center">Módulo 2 - Fundamentos de Programación en Java</h3>_**
 
 - [Ejercicio 15 - Calculadora en Java](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_2/ejercicioIndividual15)
 - [Ejercicio 17 - Contador de vocales y consonantes que muestra total](https://github.com/KathyAlde21/ejerciciosIndividualesAppMoviles/tree/master/src/Modulo_2/ejercicioIndividual17)
